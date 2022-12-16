@@ -45,13 +45,13 @@
     "scheduler": "^0.23.0",
     "react-is": "^18.2.0",
     "react": "^18.2.0",
-    "@types/react": "^18.0.17",
+    "@types/react": "^18.0.26",
     "react-dom": "^18.2.0",
-    "@types/react-dom": "^18.0.6",
+    "@types/react-dom": "^18.0.9",
     "history": "^5.3.0",
-    "react-router": "^6.3.0",
-    "react-router-dom": "^6.3.0",
-    "react-bootstrap": "^2.5.0"
+    "react-router": "^6.4.5",
+    "react-router-dom": "^6.4.5",
+    "react-bootstrap": "^2.7.0"
   },
   "devDependencies": {
     "eslint": "^8.29.0",
