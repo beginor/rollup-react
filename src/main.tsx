@@ -4,7 +4,10 @@ import { createRoot } from 'react-dom/client';
 import './main.css';
 import App from './app';
 
-const root = createRoot(document.getElementById('app') as HTMLElement);
+const page = document.querySelector('.page') as HTMLDivElement;
+page.innerHTML = '';
+
+const root = createRoot(page);
 root.render(
     <StrictMode>
       <App message='Hello, World!' />

@@ -2,10 +2,10 @@ import './app.css';
 
 export default function App(props: AppProps): JSX.Element {
     return (
-      <>
-        <h2>Hello, react!</h2>
+      <div className='page-wrapper app'>
+        <h1>Hello, react!</h1>
         <p>{props.message}</p>
-      </>
+      </div>
     );
 }
 
