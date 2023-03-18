@@ -5,8 +5,8 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "strict": true,
     "importHelpers": true,
+    "strict": true,
     "jsx": "react-jsx",
     "baseUrl": "./"
   },
