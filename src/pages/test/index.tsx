@@ -1,11 +1,11 @@
 import { useEffect, useState, useCallback, Suspense, lazy } from 'react';
 import { Link, useRoutes, Outlet } from 'react-router-dom';
 
-import { route } from './pages/route';
+import { routes } from './pages/routes';
 
 export function HomePage(): JSX.Element {
 
-    const router = useRoutes(route);
+    const router = useRoutes(routes);
 
     return (
       <div>

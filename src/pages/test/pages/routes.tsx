@@ -6,7 +6,7 @@ const Test1 = lazy(() => import('./test1'));
 const Test2 = lazy(() => import('./test2'));
 const Test3 = lazy(() => import('./test3'));
 
-export const route: RouteObject[] = [
+export const routes: RouteObject[] = [
     {
         path: 'test1',
         element: (
