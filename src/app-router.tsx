@@ -1,26 +1,18 @@
-import { lazy } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
 
 import { AppError } from './app-error';
 import { AppLayout } from './app-layout';
 
-import { HomePage } from './pages/home/home';
+import { route as homeRoute } from './pages/home/route';
+import { route as testRoute } from './pages/test/route';
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <AppLayout />,
         children: [
-            {
-                path: 'home',
-                element: <HomePage />
-            },
-            {
-                path: 'test',
-                lazy: (): Promise<RouteObject> => {
-                    return import('./pages/test/test').then (m => m.default);
-                }
-            }
+            homeRoute,
+            testRoute,
         ],
         errorElement: <AppError />
     }
