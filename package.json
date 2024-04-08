@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "rollup react starter kit",
   "main": "index.html",
+  "type": "module",
   "engines": {
     "node": ">=18.0.0",
     "pnpm": ">=8.0.0"
@@ -17,7 +18,9 @@
     "start": "pnpm run clean && pnpm run dev",
     "test": "echo test",
     "esbuild": "NODE_ENV=production node esbuild.mjs",
-    "esbuild-watch": "ESBUILD_WATCH=true node esbuild.mjs"
+    "esbuild-watch": "ESBUILD_WATCH=true node esbuild.mjs",
+    "vite-dev": "vite",
+    "vite-build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -56,6 +59,8 @@
     "@typescript-eslint/eslint-plugin": "^6.4.0",
     "typescript": "^5.1.6",
     "esbuild": "^0.19.2",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "vite": "^5.2.8",
+    "@vitejs/plugin-react": "^4.2.1"
   }
 }
