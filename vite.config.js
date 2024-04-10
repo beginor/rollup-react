@@ -3,10 +3,10 @@ import fs from 'fs';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
+const pathbase = '/demo';
 // fallback rules;
 const fallbackRules = [
-  // { pattern: '/apps/(?!assets/).*', fallback: '/apps/index.html' },
-  { pattern: '/(?!assets/).*', fallback: '/index.html' },
+  { pattern: '^/apps/main/(?!assets/).*', fallback: '/apps/main/index.html' }
 ];
 
 export default defineConfig({
@@ -29,8 +29,9 @@ export default defineConfig({
     }
   },
   plugins: [
-    react(),
+    pathbasePlugin(pathbase),
     spaFallbackPlugin(),
+    react(),
   ]
 });
 
@@ -75,4 +76,22 @@ function spaFallbackPlugin() {
       server.middlewares.use(spaFallbackMiddleware);
     },
   }
+}
+
+function pathbasePlugin(pathbase) {
+  function pathbaseMiddleware(req, res, next) {
+    if (req.url.startsWith(pathbase)) {
+      req.url = req.url.substring(pathbase.length);
+    }
+    next();
+  }
+  return {
+    name: 'pathbase',
+    configureServer: server => {
+      server.middlewares.use(pathbaseMiddleware);
+    },
+    configurePreviewServer: server => {
+      server.middlewares.use(pathbaseMiddleware);
+    },
+  };
 }
