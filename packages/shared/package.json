@@ -1,0 +1,24 @@
+{
+  "name": "@beginor/packages-shared",
+  "version": "1.0.0",
+  "description": "",
+  "files": ["dist"],
+  "main": "dist/index.js",
+  "types": "dist/typings/index.d.ts",
+  "type": "module",
+  "scripts": {
+    "esbuild": "node esbuild.js",
+    "tsc": "tsc -p tsconfig.json",
+    "build": "pnpm run esbuild && pnpm run tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "typescript": "^5.4.4",
+    "esbuild": "^0.20.2"
+  }
+}
