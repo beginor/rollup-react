@@ -9,10 +9,10 @@
     "pnpm": ">=8.0.0"
   },
   "scripts": {
-    "build": "vite build",
+    "build": "pnpm run build-packages && pnpm run build-apps",
     "start": "vite",
-    "preview": "vite preview",
-    "test": "echo test"
+    "build-packages": "pnpm run --recursive build",
+    "build-apps": "vite build"
   },
   "repository": {
     "type": "git",
@@ -52,6 +52,7 @@
     "typescript": "^5.4.4",
     "vite": "^5.2.7",
     "@vitejs/plugin-react": "^4.2.1",
-    "eslint-plugin-react-hooks": "^4.6.0"
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "esbuild": "^0.20.2"
   }
 }

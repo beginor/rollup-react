@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-import { defineConfig } from 'vite'
+import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 // fallback rules;
@@ -24,7 +24,7 @@ export default defineConfig({
     manifest: false,
     rollupOptions: {
       input: {
-        'main': 'index.html'
+        'main': 'apps/main/index.html'
       }
     }
   },
