@@ -1,7 +1,7 @@
 const rules = require('./.eslintrc.rules.cjs');
 
 /**
- * @type { import('@typescript-eslint/utils/dist').TSESLint.Linter.Config }
+ * @type { import('@typescript-eslint/utils/dist').TSESLint.Linter.ConfigType }
  */
 module.exports = {
   extends: [
@@ -27,7 +27,8 @@ module.exports = {
     ".vscode/**/*",
     "*.cjs",
     "*.js",
-    "*.mjs"
+    "*.mjs",
+    "vite.config.ts",
   ],
   overrides: [
     {
