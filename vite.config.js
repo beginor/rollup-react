@@ -10,7 +10,7 @@ const fallbackRules = [
 ];
 
 export default defineConfig({
-  base: '',
+  base: `${pathbase}/`,
   publicDir: 'public',
   server: {
     host: '127.0.0.1',
@@ -18,6 +18,11 @@ export default defineConfig({
     proxy: {
       "/api": 'http://localhost:5000/api'
     },
+  },
+  resolve: {
+    alias: [
+      { find: pathbase, replacement: '' }
+    ]
   },
   build: {
     lib: false,
@@ -28,8 +33,10 @@ export default defineConfig({
       }
     }
   },
+  esbuild: {
+    legalComments: 'none'
+  },
   plugins: [
-    pathbasePlugin(pathbase),
     spaFallbackPlugin(),
     react(),
   ]
@@ -76,22 +83,4 @@ function spaFallbackPlugin() {
       server.middlewares.use(spaFallbackMiddleware);
     },
   }
-}
-
-function pathbasePlugin(pathbase) {
-  function pathbaseMiddleware(req, res, next) {
-    if (req.url.startsWith(pathbase)) {
-      req.url = req.url.substring(pathbase.length);
-    }
-    next();
-  }
-  return {
-    name: 'pathbase',
-    configureServer: server => {
-      server.middlewares.use(pathbaseMiddleware);
-    },
-    configurePreviewServer: server => {
-      server.middlewares.use(pathbaseMiddleware);
-    },
-  };
 }
