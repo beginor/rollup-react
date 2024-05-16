@@ -1,12 +1,14 @@
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
-const pathbase = '/demo';
+import pathbasePlugin from './vite-plugin-pathbase';
 import spaFallbackPlugin from './vite-plugin-spafallback';
+
+const pathbase = '/demo';
 
 // spa fallback rules;
 const fallbackRules = [
-  { pattern: /\/(?!assets\/).*/, fallback: '/index.html' },
+  { pattern: /^\/apps\/\/(?!assets\/).*/, fallback: '/apps/main/index.html' },
 ];
 
 export default defineConfig({
@@ -37,6 +39,8 @@ export default defineConfig({
     legalComments: 'none'
   },
   plugins: [
+    pathbasePlugin(pathbase),
     spaFallbackPlugin(fallbackRules),
+    react()
   ]
 });
