@@ -1,6 +1,6 @@
 import { ConfigProvider, App as AntdApp } from 'antd';
 
-import { zhCN, theme } from './antd-locale';
+import { zhCN, theme } from './locale';
 
 import './app.css';
 
