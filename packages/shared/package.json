@@ -7,18 +7,17 @@
   "types": "dist/typings/index.d.ts",
   "type": "module",
   "scripts": {
-    "esbuild": "node esbuild.js",
     "tsc": "tsc -p tsconfig.json",
-    "build": "pnpm run esbuild && pnpm run tsc"
+    "build": "vite build && pnpm run tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "tslib": "^2.6.2"
+    "tslib": "^2.8.1"
   },
   "devDependencies": {
     "typescript": "^5.4.4",
-    "esbuild": "^0.20.2"
+    "vite": "^6.0.5"
   }
 }
